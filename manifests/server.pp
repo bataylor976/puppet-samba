@@ -20,6 +20,10 @@ class samba::server($interfaces = '',
                     $os_level = '',
                     $preferred_master = '',
                     $bind_interfaces_only = 'yes',
+                    $server_max_protocol = '',
+                    $server_min_protocol = '',
+                    $client_ntlmv2_auth = 'yes',
+                    $Server_signing = 'auto',
                     $shares = {},
                     $users = {}, ) {
 
@@ -61,6 +65,10 @@ class samba::server($interfaces = '',
     'pam password change':  value => $pam_password_change;
     'os level':             value => $os_level;
     'preferred master':     value => $preferred_master;
+    'server max protocol':  value => $server_max_protocol;
+    'server min protocol':  value => $server_min_protocol;
+    'client ntlmv2 auth':   value => $client_ntlmv2_auth;
+    'Server signing':       value => $Server_signing;
   }
 
   create_resources(samba::server::share, $shares)
