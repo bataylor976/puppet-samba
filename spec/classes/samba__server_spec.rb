@@ -10,6 +10,7 @@ describe 'samba::server' do
   it { should contain_samba__server__option('interfaces') }
   it { should contain_samba__server__option('bind interfaces only') }
   it { should contain_samba__server__option('security') }
+  it { should contain_samba__server__option('realm') }
   it { should contain_samba__server__option('server string') }
   it { should contain_samba__server__option('unix password sync') }
   it { should contain_samba__server__option('workgroup') }
@@ -24,7 +25,7 @@ describe 'samba::server' do
   it { should contain_samba__server__option('server max protocol') }
   it { should contain_samba__server__option('server max protocol') }
   it { should contain_samba__server__option('client ntlmv2 auth') }
-  it { should contain_samba__server__option('Server signing') }
+  it { should contain_samba__server__option('server signing') }
 
   context 'with hiera shares hash' do
     let(:params) {{

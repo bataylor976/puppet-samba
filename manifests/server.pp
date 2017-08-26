@@ -24,6 +24,7 @@ class samba::server($interfaces = '',
                     $server_min_protocol = '',
                     $client_ntlmv2_auth = 'yes',
                     $server_signing = 'auto',
+                    $realm = '',
                     $shares = {},
                     $users = {}, ) {
 
@@ -48,6 +49,7 @@ class samba::server($interfaces = '',
     'interfaces':           value => $interfaces;
     'bind interfaces only': value => $bind_interfaces_only;
     'security':             value => $security;
+    'realm':                value => $realm;
     'server string':        value => $server_string;
     'unix password sync':   value => $unix_password_sync;
     'netbios name':         value => $netbios_name;
